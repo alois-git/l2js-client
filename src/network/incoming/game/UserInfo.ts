@@ -32,10 +32,6 @@ export default class UserInfo extends GameClientPacket {
     this.User.WIT = this.readD();
     this.User.MEN = this.readD();
 
-    this.logger.info("User info for " + this.User.Name)
-    this.logger.info("STR " + this.User.STR)
-    this.logger.info("INT " + this.User.INT)
-
     this.User.MaxHp = this.readD();
     this.User.Hp = this.readD();
     this.User.MaxMp = this.readD();
@@ -159,10 +155,6 @@ export default class UserInfo extends GameClientPacket {
     const _titleColor = this.readD();
     const _cursedWeapons = this.readD();
 
-    this.logger.info("PAttack " + this.User.PAtk)
-    this.logger.info("User karma " + this.User.Karma)
-    this.logger.info("User class " + this.User.ClassId)
-    this.logger.info("User CP/MAXCP " + this.User.Cp + "/" + this.User.MaxCp)
     return true;
   }
 }

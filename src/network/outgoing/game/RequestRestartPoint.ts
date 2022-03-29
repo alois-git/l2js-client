@@ -5,7 +5,7 @@ export default class RequestRestartPoint extends GameServerPacket {
     super();
   }
   write(): void {
-    this.writeC(0x7d);
+    this.writeC(0x6d);
     this.writeD(this.pointType);
   }
 }

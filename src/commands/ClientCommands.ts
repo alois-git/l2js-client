@@ -155,6 +155,10 @@ export default interface ClientCommands {
    */
   revive(where: RestartPoint): void;
   /**
+   * Leave party
+   */
+  leaveParty(): void;
+  /**
    * Accept resurrect request
    */
   acceptResurrect(): void;

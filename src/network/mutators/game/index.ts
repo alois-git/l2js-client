@@ -96,6 +96,7 @@ import NpcHtmlMessageMutator from "./NpcHtmlMessageMutator";
 import NpcQuestHtmlMessageMutator from "./NpcQuestHtmlMessageMutator";
 import RecipeItemMakeInfoMutator from "./RecipeItemMakeInfoMutator";
 import SystemMessageMutator from "./SystemMessageMutator";
+import AutoAttackStart from "../../incoming/game/AutoAttackStart";
 
 export default [
   [AbnormalStatusUpdateMutator.prototype, AbnormalStatusUpdate],
@@ -147,4 +148,5 @@ export default [
   [NpcQuestHtmlMessageMutator.prototype, NpcQuestHtmlMessage],
   [RecipeItemMakeInfoMutator.prototype, RecipeItemMakeInfo],
   [SystemMessageMutator.prototype, SystemMessage],
+  [AutoAttackStart.prototype, AutoAttackStart],
 ];

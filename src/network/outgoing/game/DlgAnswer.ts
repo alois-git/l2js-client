@@ -10,7 +10,7 @@ export default class DlgAnswer extends GameServerPacket {
   }
 
   write(): void {
-    this.writeC(0xc6);
+    this.writeC(0xc5);
     this.writeD(this._messageId);
 
     this.writeD(this._answer);

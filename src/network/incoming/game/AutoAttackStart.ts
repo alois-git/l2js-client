@@ -1,10 +1,10 @@
 import GameClientPacket from "./GameClientPacket";
 
 export default class AutoAttackStart extends GameClientPacket {
+  targetObjId: number;
   // @Override
   readImpl(): boolean {
-    const _id = this.readC();
-    const _targetObjId = this.readD();
+    this.targetObjId = this.readD();
 
     return true;
   }

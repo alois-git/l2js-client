@@ -1,6 +1,5 @@
 import L2Creature from "../entities/L2Creature";
 import ReceivablePacket from "../mmocore/ReceivablePacket";
-import MMOClient from "../mmocore/MMOClient";
 import SendablePacket from "../mmocore/SendablePacket";
 import L2PartyMember from "../entities/L2PartyMember";
 import LoginClient from "../network/LoginClient";
@@ -37,6 +36,16 @@ export declare type ETargetSelected = {
   data: { objectId: number; targetObjectId: number; targetLocation: number[] };
   once: boolean;
 };
+export declare type EAutoAttackStart = {
+  type: string;
+  data: { targetObjectId: number};
+  once: boolean;
+};
+export declare type EStatusUpdate = {
+  type: string;
+  data: { source : number, stats: Record<number, number> };
+  once: boolean;
+}
 export declare type EMyTargetSelected = {
   type: string;
   data: { objectId: number };
@@ -162,6 +171,14 @@ export declare type OnTargetSelectedEvent = [
   "TargetSelected",
   (e: ETargetSelected) => void
 ];
+export declare type OnStatusUpdateEvent = [
+  "StatusUpdate",
+  (e: EStatusUpdate) => void
+]
+export declare type OnAutoAttackStartEvent = [
+  "AutoAttackStart",
+  (e: EAutoAttackStart) => void
+];
 export declare type OnMyTargetSelectedEvent = [
   "MyTargetSelected",
   (e: EMyTargetSelected) => void
@@ -222,6 +239,8 @@ export declare type EventHandlerType =
   | OnLoggedInEvent
   | OnPacketReceivedEvent
   | OnPacketSentEvent
+  | OnAutoAttackStartEvent
+  | OnStatusUpdateEvent
   | OnPartyRequestEvent
   | OnDieEvent
   | OnTargetSelectedEvent

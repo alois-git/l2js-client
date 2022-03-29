@@ -24,7 +24,7 @@ export default class RequestAutoSoulShot extends GameServerPacket {
 
   write(): void {
     this.writeC(0xd0);
-    this.writeH(0x0d);
+    this.writeH(0x05);
     this.writeD(this._shotItemId);
     this.writeD(this._enabled ? 1 : 0);
   }

@@ -18,7 +18,10 @@ export default class CharInfoMutator extends IMMOClientMutator<
       char.Y = packet.Char.Y;
       char.Z = packet.Char.Z;
       char.Name = packet.Char.Name;
-
+      char.Hp = packet.Char.Hp;
+      char.Mp = packet.Char.Mp;
+      char.MaxHp = packet.Char.MaxHp;
+      char.MaxMp = packet.Char.MaxMp;
       char.Race = packet.Char.Race;
       char.Sex = packet.Char.Sex;
       char.BaseClassId = packet.Char.BaseClassId;

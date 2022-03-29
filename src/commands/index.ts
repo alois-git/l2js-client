@@ -29,6 +29,7 @@ import CommandUseItem from "./CommandUseItem";
 import CommandValidatePosition from "./CommandValidatePosition";
 import CommandRequestJoinParty from "./CommandRequestJoinParty";
 import CommandRequestBypass from "./CommandRequestBypass";
+import CommandLeaveParty from "./CommandLeaveParty";
 
 export default {
   enter: CommandEnter.prototype,
@@ -70,6 +71,7 @@ export default {
   craft: CommandCraft.prototype,
 
   revive: CommandRevive.prototype,
+  leaveParty: CommandLeaveParty.prototype,
 
   acceptResurrect: CommandAcceptResurrect.prototype,
   declineResurrect: CommandDeclineResurrect.prototype,

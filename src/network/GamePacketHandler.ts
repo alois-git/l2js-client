@@ -65,7 +65,7 @@ export default class GamePacketHandler implements IPacketHandler<GameClient> {
         case 0x17:
           rpk = new Packets.GetItem();
           break;
-        case 0x14:
+        case 0x0e:
           rpk = new Packets.StatusUpdate();
           break;
         case 0x19:
@@ -109,6 +109,22 @@ export default class GamePacketHandler implements IPacketHandler<GameClient> {
           break;
         case 0x29:
           rpk = new Packets.TargetSelected();
+          break;
+        case 0x49:
+          //73 0x49 MagicSkillCanceld
+          break;
+        case 0x2c:
+          // 0x2c AutoAttackStop
+          break;
+        case 0x2a:
+          // 0x2a TargetUnselected
+          break;
+        case 0x2b:
+          // 0x2b AutoAttackStart
+          rpk = new Packets.AutoAttackStart();
+          break;
+        case 0x29:
+          // 0x29
           break;
         case 0x2d:
           //Social action
@@ -362,7 +378,6 @@ export default class GamePacketHandler implements IPacketHandler<GameClient> {
             case 0xe1:
               rpk = new Packets.ExNevitAdventTimeChange();
               break;
-
             default:
               this.logger.info("Unknow subpacket " + opcode)
               break;
@@ -370,7 +385,6 @@ export default class GamePacketHandler implements IPacketHandler<GameClient> {
           break;
         }
         default:
-          this.logger.info("Unknow packet " + opcode)
           break;
       }
 

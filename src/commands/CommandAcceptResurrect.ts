@@ -11,7 +11,7 @@ export default class CommandAcceptResurrect extends AbstractGameCommand {
         new DlgAnswer(
           this.GameClient.LastConfirmMessageId,
           1,
-          this.GameClient.LastConfirmMessageRequesterId
+          0
         )
       );
     }

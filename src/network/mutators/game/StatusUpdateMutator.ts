@@ -14,6 +14,11 @@ export default class StatusUpdateMutator extends IMMOClientMutator<
         packet.ObjectId
       );
 
+      console.log("status changed " + char);
+
+    this.fire("AutoAttackStart", { source: packet.ObjectId, stats: packet.Stats });
+
+
       Object.keys(packet.Stats).forEach((key) => {
         const status: number = parseInt(key, 10);
         const value = packet.Stats[status];
@@ -150,5 +155,6 @@ export default class StatusUpdateMutator extends IMMOClientMutator<
         }
       });
     }
+
   }
 }
